@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+    <head>
+        <title>CQRS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <style>
+            html, body, input, select, textarea
+            {
+                font-size: 1.05em;
+            }
+        </style>
+        
+        <!-- load angular via CDN -->
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+
+        <header>
+			<nav class="navbar navbar-default">
+
+			</nav>
+		</header>
+
+        <div class="container">
+
+            <div ng-controller="mainController">
+            
+                <div>
+                    <label>name</label>
+                    <input type="text" ng-model="name" />
+                </div>
+                <div>
+                    <label>age</label>
+                    <input type="text" ng-model="age" />
+                </div>
+                <div>
+                    <label>nationality</label>
+                    <input type="text" ng-model="nationality" />
+                </div>
+                <hr />
+                <button ng-click="create()">
+                    create
+                </button>
+
+                <hr>
+                <ul>
+                    <li ng-repeat="record in records">
+                        {{ record }}
+                    </li>
+                </ul>
+                <button ng-click="refresh()">
+                    refresh
+                </button>
+            </div>
+            
+		</div>
+
+    </body>
+</html>
